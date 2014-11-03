@@ -26,7 +26,7 @@ define( function (require) {
         //loop the prototype
         for (var i in props) {
             if (props.hasOwnProperty(i)) {
-                Child.prototype[i] = props[]
+                Child.prototype[i] = props[i]
             }
         }
 
