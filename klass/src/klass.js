@@ -3,6 +3,9 @@
  * @author vikingmute
  */ 
 
+if (typeof define !== 'function') {
+    var define = require('amdefine')(module);
+}
 define( function (require) {
     function klass(Parent, props) {
         var Child, Pimp;

@@ -4,6 +4,10 @@
  * 
  */
 
+if (typeof define !== 'function') {
+    var define = require('amdefine')(module);
+}
+
 define(function (require) {
     function Emitter() {
         this._events = {};
@@ -74,9 +78,9 @@ define(function (require) {
             if (cargs.length === 0) {
                 callback.apply(this);
             } else {
-                callback.apply(this, cargs[i]);
+                callback.apply(this, cargs);
             }
         }
     }
-        
+    return Emitter;        
 });
