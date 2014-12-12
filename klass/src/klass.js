@@ -3,12 +3,12 @@
  * @author vikingmute
  */ 
 
-if (typeof define !== 'function') {
-    var define = require('amdefine')(module);
-}
 define( function (require) {
     function klass(Parent, props) {
         var Child, Pimp;
+        //check props is empty
+        props = props || {};
+        
         Child = function () {
             if (Child.uper && Child.uper.hasOwnProperty('_init')) {
                 Child.uper._init.apply(this, arguments);
@@ -26,7 +26,8 @@ define( function (require) {
         Child.uper = Parent.prototype;
         Child.prototype = new Pimp();
         Child.prototype.constructor = Child;
-        //loop the prototype
+        
+        //loop the prototype and overide
         for (var i in props) {
             if (props.hasOwnProperty(i)) {
                 Child.prototype[i] = props[i]

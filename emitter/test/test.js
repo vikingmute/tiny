@@ -1,6 +1,7 @@
 //this test case is powered by mocha
 var assert = require('assert');
-var Emitter = require('../src/emitter.js');
+var requirejs = require('requirejs');
+var Emitter = requirejs('../src/emitter.js');
 describe('Emitter', function () {
     describe('test addListener aka on', function () {
         it('should equal emit results', function () {
